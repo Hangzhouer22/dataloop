@@ -1,0 +1,23 @@
+name: "dataloop"
+output_dir: "docs"  # For GitHub Pages
+navbar:
+  title: "dataloop"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About Us"
+      href: about.html
+    - text: "Service"
+      href: service.html
+    - text: "Portfolio"
+      href: portfolio.html
+    - text: "Contact"
+      href: contact.html
+output:
+  html_document:
+    theme: flatly   # Use a professional Bootstrap theme
+    highlight: textmate
+    toc: true
+    toc_float: true
+
+

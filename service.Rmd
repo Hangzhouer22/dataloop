@@ -1,0 +1,34 @@
+---
+title: "service"
+output: html_document
+---
+
+---
+title: "Our Services"
+output: html_document
+---
+
+We specialize in the following:
+
+1.  **Consulting**: Expert advice tailored to your needs.
+
+**"Empowering Insights, Driving Results":** With extensive expertise in medicine, molecular biology, biochemistry, pathology, immunology, statistics, data analysis, and bioinformatics, I offer consulting services that bridge science and data-driven decision-making. As a seasoned academic researcher with over 50 publications and more than 4,000 citations, I bring a wealth of knowledge to tackle complex challenges in:
+
+**Biomedical Research:** Designing experiments, analyzing research and clinic data, and interpreting results to accelerate discoveries in life sciences.
+
+**Data Science Solutions:** Leveraging R, Python, and SAS to uncover actionable insights from diverse datasets, from medicine, public health to environmental inspection. Providing customers with specialized analysis, including regular statistical significance assays, correlation and regression analysis, PCA, gene differential expression analysis, trajectory analysis, and more. 
+
+**Education and Mentorship:** Guiding students and professionals in statistical methods, practical project execution, and advanced analysis techniques. Whether you need support in health data analysis, predictive modeling, experimental design, or team training, I tailor my approach to meet your goals. My unique blend of scientific rigor and analytical expertise ensures impactful outcomes for both academic and industry partners.
+
+2.  **Web Development**: Modern and responsive designs customer specialized website, and run maintenance on your behalf.
+3.  **Data Analysis**: Turning data into insights across various aspects: 
+
+
+* [bayes]](service/bayesiananalysis01.html)
+
+* [poisson](service/poisson_distribution.html)  
+* [hypergeometric](service/hypergeometric_distribution.html)  
+* [bayes](service/bayesiananalysis01.html)
+* [Hivepi](service/HIVepi.html)  
+* [NSCLC](service/NSCLC.html)  
+* [Trajectory](service/TrajectoryVSpseudo.html)

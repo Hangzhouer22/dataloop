@@ -1,0 +1,49 @@
+---
+title: "bayesianexam01"
+author: "yutao"
+date: "2025-01-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Bayesian analysis
+```{r}
+# Load required libraries
+if (!requireNamespace("rstanarm", quietly = TRUE)) {
+  install.packages("rstanarm")
+}
+library(rstanarm)
+
+# Observed data: 14 heads out of 20 flips
+successes <- 14
+trials <- 20
+
+# Bayesian model: Beta(2, 2) prior on p
+bayesian_model <- stan_glm(
+  cbind(successes, trials - successes) ~ 1,  # Binomial data
+  family = binomial(link = "logit"),       # Binomial model
+  prior = normal(0, 2.5, autoscale = TRUE),# Default weakly informative prior on the intercept
+  prior_aux = NULL,
+  chains = 4,                              # Number of MCMC chains
+  iter = 2000,                             # Number of iterations
+  seed = 123                               # For reproducibility
+)
+
+# Print the model summary
+summary(bayesian_model)
+
+# Plot posterior distribution of p
+posterior_samples <- as.data.frame(bayesian_model)
+posterior_p <- exp(posterior_samples$`(Intercept)`) / 
+               (1 + exp(posterior_samples$`(Intercept)`))  # Convert from log-odds to probability
+
+hist(posterior_p, breaks = 50, probability = TRUE,
+     col = "lightblue", main = "Posterior Distribution of p",
+     xlab = "p (Probability of Heads)")
+abline(v = mean(posterior_p), col = "red", lwd = 2, lty = 2)  # Posterior mean
+
+```
+

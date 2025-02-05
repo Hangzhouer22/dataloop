@@ -1,0 +1,45 @@
+---
+title: "Poisson_distribution"
+author: "Yutao Yan"
+date: "2025-01-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+# Set the average rate (lambda) for the Poisson distribution
+lambda <- 5
+
+# Generate random numbers from a Poisson distribution (e.g., simulate 100 observations)
+set.seed(123)  # For reproducibility
+random_values <- rpois(100, lambda)
+print(random_values)
+
+# Visualize the distribution of generated data
+hist(random_values, breaks = 10, col = "skyblue", main = "Histogram of Poisson Distribution",
+     xlab = "Number of Arrivals", ylab = "Frequency")
+
+# Probability of exactly 3 arrivals (P(X = 3))
+prob_3 <- dpois(3, lambda)
+cat("P(X = 3):", prob_3, "\n")
+
+# Probability of 3 or fewer arrivals (P(X <= 3))
+prob_3_or_fewer <- ppois(3, lambda)
+cat("P(X <= 3):", prob_3_or_fewer, "\n")
+
+# Probability of more than 7 arrivals (P(X > 7))
+prob_more_than_7 <- 1 - ppois(7, lambda)
+cat("P(X > 7):", prob_more_than_7, "\n")
+
+# Plot the probability mass function (PMF)
+x_vals <- 0:15  # Range of X values
+pmf <- dpois(x_vals, lambda)
+barplot(pmf, names.arg = x_vals, col = "lightgreen", 
+        main = "Poisson PMF (λ = 5)", xlab = "Number of Arrivals", ylab = "Probability")
+
+```
+

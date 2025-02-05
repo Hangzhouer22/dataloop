@@ -1,0 +1,27 @@
+---
+title: "hypergeometric_distribution"
+author: "Yutao Yan"
+date: "2025-01-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+# Parameters
+m <- 8  # Number of red balls (successes in the population)
+n <- 12 # Number of white balls (failures in the population)
+k <- 5  # Number of balls drawn (sample size)
+
+# Probability of getting exactly 3 red balls
+x <- 3  # Number of red balls in the sample
+probability <- dhyper(x, m, n, k)
+
+# Output
+cat("The probability of getting exactly 3 red balls is:", probability, "\n")
+
+```
+
